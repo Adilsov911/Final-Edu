@@ -147,3 +147,12 @@ C:\Users\adils\source\repos\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\NewE
 C:\Users\adils\source\repos\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\adils\source\repos\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\NewEduFinal.RazorTargetAssemblyInfo.cs
 C:\Users\adils\source\repos\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\NewEduFinal.Views.pdb
+C:\Users\adils\source\repos\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\adils\source\repos\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\adils\source\repos\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\adils\source\repos\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Views\About\Index.cshtml.g.cs
+C:\Users\adils\source\repos\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Views\Course\Index.cshtml.g.cs
+C:\Users\adils\source\repos\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Views\Event\Index.cshtml.g.cs
+C:\Users\adils\source\repos\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Views\Teacher\Index.cshtml.g.cs
+C:\Users\adils\source\repos\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Index.cshtml.g.cs
+C:\Users\adils\source\repos\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Index.cshtml.g.cs
