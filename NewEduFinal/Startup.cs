@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NewEduFinal.DAL;
+using NewEduFinal.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace NewEduFinal
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
+            services.AddScoped<LayoutService>();
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseSqlServer("Server=LAPTOP-0KTU4DK9\\SQLEXPRESS;Database=EducationDb;Trusted_Connection=true");

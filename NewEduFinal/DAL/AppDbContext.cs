@@ -32,5 +32,6 @@ namespace NewEduFinal.DAL
         public DbSet<TeacherPosition> TeacherPositions { get; set; }
         public DbSet<TeacherSkills> TeacherSkills { get; set; }
         public DbSet<About> Abouts { get; set; }
+        public DbSet<Setting> Settings { get; set; }
     }
 }

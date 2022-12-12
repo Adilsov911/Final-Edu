@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -17,5 +18,9 @@ namespace NewEduFinal.Models
         public string CertificationInfo { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
+        public List<CourseFeatures> CourseFeatures { get; set; }
+        public List<CourseTag> CourseTags { get; set; }
+        [NotMapped]
+        public List<int> TagIds { get; set; }
     }
 }
