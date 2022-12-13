@@ -10,7 +10,12 @@ namespace NewEduFinal.Models
     {
         [StringLength(255)]
         public string Title { get; set; }
-        public Nullable<DateTime> Date { get; set; }
+        public DateTime Date { get; set; }
         public string Description { get; set; }
+        public string Image { get; set; }
+        [StringLength(255)]
+        public string AuthorName { get; set; }
+        [StringLength(255)]
+        public string AuthorSurname { get; set; }
     }
 }

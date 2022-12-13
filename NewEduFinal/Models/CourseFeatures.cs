@@ -8,7 +8,7 @@ namespace NewEduFinal.Models
 {
     public class CourseFeatures : BaseEntity
     {
-        public Nullable<DateTime> StartTime { get; set; }
+        public DateTime StartTime { get; set; }
         [StringLength(255)]
         public string Duration { get; set; }
         [StringLength(255)]

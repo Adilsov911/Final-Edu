@@ -18,8 +18,8 @@ namespace NewEduFinal.Services
 
         public Setting GetSettingData()
         {
-            Setting data = _context.Settings.FirstOrDefault();
-            return data;
+            return _context.Settings.FirstOrDefault();
+            
         }
     }
 }

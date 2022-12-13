@@ -8,6 +8,6 @@ namespace NewEduFinal.Models
     public class NoticeBoard :BaseEntity
     {
         public string Description { get; set; }
-        public Nullable<DateTime> Date { get; set; }
+        public DateTime Date { get; set; }
     }
 }

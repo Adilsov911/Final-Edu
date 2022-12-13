@@ -16,7 +16,8 @@ namespace NewEduFinal.Models
         public string HowToApply { get; set; }
         public string AboutCourseInfo { get; set; }
         public string CertificationInfo { get; set; }
-        public int CategoryId { get; set; }
+        public string HomeAbout { get; set; }
+        public int? CategoryId { get; set; }
         public Category Category { get; set; }
         public List<CourseFeatures> CourseFeatures { get; set; }
         public List<CourseTag> CourseTags { get; set; }

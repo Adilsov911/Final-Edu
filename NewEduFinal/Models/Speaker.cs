@@ -13,5 +13,8 @@ namespace NewEduFinal.Models
         [StringLength(255)]
         public string Surname { get; set; }
         public string Image { get; set; }
+        public string Position { get; set; }
+
+
     }
 }

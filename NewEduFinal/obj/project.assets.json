@@ -8631,11 +8631,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\adils\\source\\repos\\NewEduFinal\\NewEduFinal\\NewEduFinal.csproj",
+      "projectUniqueName": "C:\\Users\\adils\\OneDrive\\Рабочий стол\\NewEduFinal\\NewEduFinal\\NewEduFinal.csproj",
       "projectName": "NewEduFinal",
-      "projectPath": "C:\\Users\\adils\\source\\repos\\NewEduFinal\\NewEduFinal\\NewEduFinal.csproj",
+      "projectPath": "C:\\Users\\adils\\OneDrive\\Рабочий стол\\NewEduFinal\\NewEduFinal\\NewEduFinal.csproj",
       "packagesPath": "C:\\Users\\adils\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\adils\\source\\repos\\NewEduFinal\\NewEduFinal\\obj\\",
+      "outputPath": "C:\\Users\\adils\\OneDrive\\Рабочий стол\\NewEduFinal\\NewEduFinal\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\adils\\AppData\\Roaming\\NuGet\\NuGet.Config",

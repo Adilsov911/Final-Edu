@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -19,6 +20,9 @@ namespace NewEduFinal.Models
         [StringLength(255)]
         public string Mail { get; set; }
         public string PhoneNumber { get; set; }
+        [NotMapped]
+        public List<int> PositionIds { get; set; }
+        public List<TeacherPosition> TeacherPositions { get; set; }
 
     }
 }

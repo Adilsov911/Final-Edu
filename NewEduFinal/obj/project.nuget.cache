@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ux/f+xJGRhhhxtglL2woZzmcNbo0DLOwKJhjQqvet9qikHTBW+IF+xrCPI+i5NsWC+kilJ4lzrt4RSUJ8WsKTQ==",
+  "dgSpecHash": "kWJUal+M6rFsrZm0DOMjggsrX7w0c42PIzNwPlnco8IQwMk0taH+O/nddBlNE1EglQgHih725b2EXhVOJGzKhA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\adils\\source\\repos\\NewEduFinal\\NewEduFinal\\NewEduFinal.csproj",
+  "projectFilePath": "C:\\Users\\adils\\OneDrive\\Рабочий стол\\NewEduFinal\\NewEduFinal\\NewEduFinal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\adils\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.31\\microsoft.aspnetcore.cryptography.internal.3.1.31.nupkg.sha512",
     "C:\\Users\\adils\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.31\\microsoft.aspnetcore.cryptography.keyderivation.3.1.31.nupkg.sha512",

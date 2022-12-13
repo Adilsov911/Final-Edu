@@ -69,13 +69,21 @@ namespace NewEduFinal.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("AuthorName")
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
+
+                    b.Property<string>("AuthorSurname")
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
+
                     b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("Date")
+                    b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DeletedAt")
@@ -85,6 +93,9 @@ namespace NewEduFinal.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
@@ -152,7 +163,7 @@ namespace NewEduFinal.Migrations
                     b.Property<string>("AboutCourseInfo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CategoryId")
+                    b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("CertificationInfo")
@@ -171,6 +182,9 @@ namespace NewEduFinal.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HomeAbout")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HowToApply")
@@ -247,7 +261,7 @@ namespace NewEduFinal.Migrations
                         .HasColumnType("nvarchar(255)")
                         .HasMaxLength(255);
 
-                    b.Property<DateTime?>("StartTime")
+                    b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("StudentCount")
@@ -322,7 +336,7 @@ namespace NewEduFinal.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("Date")
+                    b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DeletedAt")
@@ -386,13 +400,13 @@ namespace NewEduFinal.Migrations
                     b.Property<string>("DeletedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("EventsId")
+                    b.Property<int?>("EventsId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<int>("SpeakersId")
+                    b.Property<int?>("SpeakersId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -460,7 +474,7 @@ namespace NewEduFinal.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("Date")
+                    b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DeletedAt")
@@ -674,6 +688,9 @@ namespace NewEduFinal.Migrations
                         .HasColumnType("nvarchar(255)")
                         .HasMaxLength(255);
 
+                    b.Property<string>("Position")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Surname")
                         .HasColumnType("nvarchar(255)")
                         .HasMaxLength(255);
@@ -802,13 +819,13 @@ namespace NewEduFinal.Migrations
                     b.Property<string>("DeletedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("HobbiesId")
+                    b.Property<int?>("HobbiesId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<int>("TeacherId")
+                    b.Property<int?>("TeacherId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -848,10 +865,10 @@ namespace NewEduFinal.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<int>("PositionId")
+                    b.Property<int?>("PositionId")
                         .HasColumnType("int");
 
-                    b.Property<int>("TeacherId")
+                    b.Property<int?>("TeacherId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -891,10 +908,10 @@ namespace NewEduFinal.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<int>("SkillsId")
+                    b.Property<int?>("SkillsId")
                         .HasColumnType("int");
 
-                    b.Property<int>("TeacherId")
+                    b.Property<int?>("TeacherId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -916,15 +933,13 @@ namespace NewEduFinal.Migrations
                 {
                     b.HasOne("NewEduFinal.Models.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CategoryId");
                 });
 
             modelBuilder.Entity("NewEduFinal.Models.CourseFeatures", b =>
                 {
                     b.HasOne("NewEduFinal.Models.Course", "Courses")
-                        .WithMany()
+                        .WithMany("CourseFeatures")
                         .HasForeignKey("CoursesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -933,7 +948,7 @@ namespace NewEduFinal.Migrations
             modelBuilder.Entity("NewEduFinal.Models.CourseTag", b =>
                 {
                     b.HasOne("NewEduFinal.Models.Course", "Courses")
-                        .WithMany()
+                        .WithMany("CourseTags")
                         .HasForeignKey("CoursesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -948,61 +963,45 @@ namespace NewEduFinal.Migrations
             modelBuilder.Entity("NewEduFinal.Models.EventSpeaker", b =>
                 {
                     b.HasOne("NewEduFinal.Models.Event", "Events")
-                        .WithMany()
-                        .HasForeignKey("EventsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("EventSpeakers")
+                        .HasForeignKey("EventsId");
 
                     b.HasOne("NewEduFinal.Models.Speaker", "Speakers")
                         .WithMany()
-                        .HasForeignKey("SpeakersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SpeakersId");
                 });
 
             modelBuilder.Entity("NewEduFinal.Models.TeacherHobbies", b =>
                 {
                     b.HasOne("NewEduFinal.Models.Hobbie", "Hobbies")
                         .WithMany()
-                        .HasForeignKey("HobbiesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("HobbiesId");
 
                     b.HasOne("NewEduFinal.Models.Teacher", "Teachers")
                         .WithMany()
-                        .HasForeignKey("TeacherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TeacherId");
                 });
 
             modelBuilder.Entity("NewEduFinal.Models.TeacherPosition", b =>
                 {
                     b.HasOne("NewEduFinal.Models.Position", "Position")
                         .WithMany()
-                        .HasForeignKey("PositionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PositionId");
 
                     b.HasOne("NewEduFinal.Models.Teacher", "Teacher")
-                        .WithMany()
-                        .HasForeignKey("TeacherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("TeacherPositions")
+                        .HasForeignKey("TeacherId");
                 });
 
             modelBuilder.Entity("NewEduFinal.Models.TeacherSkills", b =>
                 {
                     b.HasOne("NewEduFinal.Models.Skill", "Skills")
                         .WithMany()
-                        .HasForeignKey("SkillsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SkillsId");
 
                     b.HasOne("NewEduFinal.Models.Teacher", "Teachers")
                         .WithMany()
-                        .HasForeignKey("TeacherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TeacherId");
                 });
 #pragma warning restore 612, 618
         }
