@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NewEduFinal.DAL;
+using NewEduFinal.Interfaces;
 using NewEduFinal.Models;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace NewEduFinal.Services
 {
-    public class LayoutService
+    public class LayoutService : ILayoutServices
     {
         private readonly AppDbContext _context;
         public LayoutService(AppDbContext context)
@@ -16,9 +17,10 @@ namespace NewEduFinal.Services
             _context = context;
         }
 
-        public Setting GetSettingData()
+        public Dictionary<string, string> GetSettingData()
         {
-            return _context.Settings.FirstOrDefault();
+             
+            return _context.Settings.ToDictionary(k => k.Key, t => t.Value);
             
         }
     }

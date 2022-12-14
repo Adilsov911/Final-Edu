@@ -320,3 +320,5 @@ C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\bin\Debu
 C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\staticwebassets\NewEduFinal.StaticWebAssets.xml
 C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\scopedcss\bundle\NewEduFinal.styles.css
 C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Views\Event\Detail.cshtml.g.cs
+C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Views\Teacher\Detail.cshtml.g.cs
+C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Detail.cshtml.g.cs

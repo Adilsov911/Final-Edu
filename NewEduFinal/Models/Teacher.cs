@@ -23,6 +23,14 @@ namespace NewEduFinal.Models
         [NotMapped]
         public List<int> PositionIds { get; set; }
         public List<TeacherPosition> TeacherPositions { get; set; }
+        [NotMapped]
+        public List<int> SkillIds { get; set; }
+        public List<TeacherSkills> TeacherSkills { get; set; }
+        [NotMapped]
+        public List<int> HobbiesIds { get; set; }
+        public List<TeacherHobbies> TeacherHobbies { get; set; }
+
+
 
     }
 }

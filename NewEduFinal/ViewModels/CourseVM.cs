@@ -14,6 +14,7 @@ namespace NewEduFinal.ViewModels
         public List<Teacher> Teachers { get; set; }
         public List<Category> Categories { get; set; }
 
+        public List<Position> Positions { get; set; }
         public Speaker Speaker { get; set; }
         public List<Event> Events { get; set; }
         public List<Blog> Blogs { get; set; }
