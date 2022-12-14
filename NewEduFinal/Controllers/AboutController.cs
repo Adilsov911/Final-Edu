@@ -20,10 +20,10 @@ namespace NewEduFinal.Controllers
         {
             HomeVM homeVM = new HomeVM()
             {
-                Abouts = _context.Abouts.FirstOrDefault(),
-                Teachers = _context.Teachers.Include(p => p.TeacherPositions).ThenInclude(tp => tp.Position).ToList().Take(4).ToList(),
-                NoticeBoards = _context.NoticeBoards.ToList(),
-                Blogs = _context.Blogs.ToList().Take(3).ToList()
+                Abouts = _context.Abouts.Where(s => s.IsDeleted == false).FirstOrDefault(),
+                Teachers = _context.Teachers.Include(p => p.TeacherPositions).ThenInclude(tp => tp.Position).Where(s => s.IsDeleted == false).ToList().Take(4).ToList(),
+                NoticeBoards = _context.NoticeBoards.Where(s => s.IsDeleted == false).ToList(),
+                Blogs = _context.Blogs.Where(s => s.IsDeleted == false).ToList().Take(3).ToList()
 
             };
 

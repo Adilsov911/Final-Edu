@@ -45,17 +45,21 @@
                             </div>
                         </div>
                         <div class="course-details-right">
-                            <h3>COURSE FEATURES</h3>
-                            <ul>
-                                <li>starts <span>@Model.CourseFeatures.StartTime.ToString("dd MMMM yyyy")</span></li>
-                                <li>duration <span>@Model.CourseFeatures.Duration</span></li>
-                                <li>class duration <span>@Model.CourseFeatures.ClassDuration</span></li>
-                                <li>skill level <span>@Model.CourseFeatures.SkillLevel</span></li>
-                                <li>language <span>@Model.CourseFeatures.Language</span></li>
-                                <li>students <span>@Model.CourseFeatures.StudentCount</span></li>
-                                <li>assesments <span>@Model.CourseFeatures.Assesments</span></li>
-                            </ul>
-                            <h3 class="red">course fee $@Model.CourseFeatures.Price</h3>
+                                @foreach (var item in Model.CourseFeatures)
+                                {
+
+                                    <h3>COURSE FEATURES</h3>
+                                    <ul>
+                                        <li>starts <span>@item.StartTime.ToString("dd MMMM yyyy")</span></li>
+                                        <li>duration <span>@item.Duration</span></li>
+                                        <li>class duration <span>@item.ClassDuration</span></li>
+                                        <li>skill level <span>@item.SkillLevel</span></li>
+                                        <li>language <span>@item.Language</span></li>
+                                        <li>students <span>@item.StudentCount</span></li>
+                                        <li>assesments <span>@item.Assesments</span></li>
+                                    </ul>
+                                    <h3 class="red">course fee $@item.Price</h3>
+                                }
                         </div>
                     </div>
                     <div class="reply-area">
@@ -108,7 +112,7 @@
                     </div>
                     <div class="single-blog-widget mb-50">
                         <div class="single-blog-banner">
-                            <a href="blog-details.html" id="blog"><img src="img/blog/blog-img.jpg" alt="blog"></a>
+                            <a href="blog-details.html" id="blog"><img src="~/img/blog/blog-img.jpg" alt="blog"></a>
                             <h2>best<br> eductaion<br> theme</h2>
                         </div>
                     </div>

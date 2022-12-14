@@ -22,22 +22,22 @@ namespace NewEduFinal.Controllers
                 CourseVM courseVM = new CourseVM()
                 {
 
-                    Teachers = _context.Teachers.Include(p => p.TeacherPositions).ThenInclude(tp => tp.Position).ToList().Take(4).ToList(),
-                    Speaker = _context.Speakers.FirstOrDefault(),
-                    Events = _context.Events.Take(8).ToList(),
-                    Categories = _context.Categories.ToList()
+                    Teachers = _context.Teachers.Include(p => p.TeacherPositions).ThenInclude(tp => tp.Position).Where(s => s.IsDeleted == false).ToList().Take(4).ToList(),
+                    Speaker = _context.Speakers.Where(s => s.IsDeleted == false).FirstOrDefault(),
+                    Events = _context.Events.Where(s => s.IsDeleted == false).Take(9).ToList(),
+                    Categories = _context.Categories.Where(s => s.IsDeleted == false).ToList()
 
                 };
                 return View(courseVM);
             }
-            public IActionResult Detail()
+            public IActionResult Detail(int id)
             {
                 EventVM eventVM = new EventVM()
                 {
-
-                    Teachers = _context.Teachers.Include(p => p.TeacherPositions).ThenInclude(tp => tp.Position).ToList().Take(4).ToList(),
-                    Speaker = _context.Speakers.Take(2).ToList(),
-                    Events = _context.Events.FirstOrDefault(),
+                    Speakers = _context.Speakers.Include(s => s.EventSpeakers).Where(s=>s.IsDeleted == false).Where(s => s.Id == id).ToList(),
+                    //Teachers = _context.Teachers.Include(p => p.TeacherPositions).ThenInclude(tp => tp.Position).ToList().Take(4).ToList(),
+                    //EventSpeakers = _context.EventSpeakers.Include(es => es.Events).Include(es => es.Speakers).Where(es => es.EventsId == id).ToList(),
+                    Events = _context.Events.Include(x => x.EventSpeakers).ThenInclude(es => es.Speakers).Where(x => x.IsDeleted == false).FirstOrDefault(x => x.Id == id),
                     Categories = _context.Categories.ToList()
 
                 };

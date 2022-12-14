@@ -17,7 +17,7 @@ namespace NewEduFinal.ViewModels
         public Speaker Speaker { get; set; }
         public List<Event> Events { get; set; }
         public List<Blog> Blogs { get; set; }
-        public CourseFeatures CourseFeatures { get; set; }
+        public List<CourseFeatures> CourseFeatures { get; set; }
 
     }
 }
