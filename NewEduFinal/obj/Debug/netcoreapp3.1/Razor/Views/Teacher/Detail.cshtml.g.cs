@@ -26,8 +26,22 @@ using NewEduFinal.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\Views\_ViewImports.cshtml"
+using NewEduFinal.Interfaces;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\Views\_ViewImports.cshtml"
+using NewEduFinal.Services;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ea966b81766a9a45e59841c3d9ff44fd28422189", @"/Views/Teacher/Detail.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2680eff55400d250a62fc0713fa7e057cf20214f", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f7890ce280e45155b90e91daf646903b6d52f537", @"/Views/_ViewImports.cshtml")]
     public class Views_Teacher_Detail : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<TeacherVM>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("alt", new global::Microsoft.AspNetCore.Html.HtmlString("teacher"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -80,7 +94,7 @@ using NewEduFinal.Models;
             <div class=""col-md-5 col-sm-5 col-xs-12"">
                 <div class=""teacher-details-img"">
                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ea966b81766a9a45e59841c3d9ff44fd284221894312", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ea966b81766a9a45e59841c3d9ff44fd284221894706", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

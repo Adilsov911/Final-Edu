@@ -26,8 +26,22 @@ using NewEduFinal.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\Views\_ViewImports.cshtml"
+using NewEduFinal.Interfaces;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\Views\_ViewImports.cshtml"
+using NewEduFinal.Services;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1419458f2696be8daeade77ddad380cd0c871fdb", @"/Views/Shared/_TeacherPartialView.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2680eff55400d250a62fc0713fa7e057cf20214f", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f7890ce280e45155b90e91daf646903b6d52f537", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__TeacherPartialView : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

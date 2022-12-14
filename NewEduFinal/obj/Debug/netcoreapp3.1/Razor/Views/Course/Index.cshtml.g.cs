@@ -26,8 +26,22 @@ using NewEduFinal.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\Views\_ViewImports.cshtml"
+using NewEduFinal.Interfaces;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\Views\_ViewImports.cshtml"
+using NewEduFinal.Services;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4719e4bbd9f5ef9f3c0f143fbd81307330d1f52e", @"/Views/Course/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2680eff55400d250a62fc0713fa7e057cf20214f", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f7890ce280e45155b90e91daf646903b6d52f537", @"/Views/_ViewImports.cshtml")]
     public class Views_Course_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<HomeVM>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("id", new global::Microsoft.AspNetCore.Html.HtmlString("search"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -91,7 +105,7 @@ using NewEduFinal.Models;
                 </div>
                 <div class=""course-form"">
                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4719e4bbd9f5ef9f3c0f143fbd81307330d1f52e6783", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4719e4bbd9f5ef9f3c0f143fbd81307330d1f52e7177", async() => {
                 WriteLiteral("\r\n                        <input type=\"search\" placeholder=\"Search...\" name=\"search\" />\r\n                        <button type=\"submit\">search</button>\r\n                    ");
             }
             );
@@ -118,9 +132,9 @@ using NewEduFinal.Models;
 #line hidden
 #nullable disable
             WriteLiteral("                <div class=\"col-md-4 col-sm-6 col-xs-12\">\r\n                    <div class=\"single-course mb-70\">\r\n                        <div class=\"course-img\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4719e4bbd9f5ef9f3c0f143fbd81307330d1f52e8927", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4719e4bbd9f5ef9f3c0f143fbd81307330d1f52e9321", async() => {
                 WriteLiteral("\r\n                                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "4719e4bbd9f5ef9f3c0f143fbd81307330d1f52e9214", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "4719e4bbd9f5ef9f3c0f143fbd81307330d1f52e9608", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -175,7 +189,7 @@ AddHtmlAttributeValue("", 1556, item.Image, 1556, 11, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                        </div>\r\n                        <div class=\"course-content\">\r\n                            <h3>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4719e4bbd9f5ef9f3c0f143fbd81307330d1f52e13314", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4719e4bbd9f5ef9f3c0f143fbd81307330d1f52e13708", async() => {
 #nullable restore
 #line 49 "C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\Views\Course\Index.cshtml"
                                                                                                   Write(item.Name);
@@ -222,7 +236,7 @@ AddHtmlAttributeValue("", 1556, item.Image, 1556, 11, false);
 #line hidden
 #nullable disable
             WriteLiteral("</p>\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4719e4bbd9f5ef9f3c0f143fbd81307330d1f52e16284", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4719e4bbd9f5ef9f3c0f143fbd81307330d1f52e16678", async() => {
                 WriteLiteral("read more");
             }
             );

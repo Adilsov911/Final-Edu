@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace NewEduFinal.Interfaces
 {
-    interface ILayoutServices
-    {
+    public interface ILayoutServices { 
+        Dictionary<string, string> GetSetting();
+
     }
 }

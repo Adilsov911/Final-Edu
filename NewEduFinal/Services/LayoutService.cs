@@ -17,11 +17,9 @@ namespace NewEduFinal.Services
             _context = context;
         }
 
-        public Dictionary<string, string> GetSettingData()
+        public Dictionary<string, string> GetSetting()
         {
-             
             return _context.Settings.ToDictionary(k => k.Key, t => t.Value);
-            
         }
     }
 }

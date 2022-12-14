@@ -1,4 +1,10 @@
-﻿<!doctype html>
+﻿@inject ILayoutServices layoutServices
+@{
+    Dictionary<string, string> settings = layoutServices.GetSetting();
+}
+
+\
+<!doctype html>
 <html class="no-js" lang="en">
 
 <!-- Mirrored from demo.devitems.com/eduhome/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 21 Jun 2020 19:45:21 GMT -->
@@ -56,7 +62,7 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-3 col-xs-6">
                         <div class="logo">
-                            <a asp-controller="home"><img src="~/img/logo/logo2.png" alt="eduhome" /></a>
+                            <a asp-controller="home"><img src="~/@settings.GetValueOrDefault("Logo2")" alt="eduhome" /></a>
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-6">
@@ -223,9 +229,9 @@
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="single-widget">
                             <h3>get in touch</h3>
-                            <p>Your address goes here, Street<br>City, Roadno 785 New York</p>
-                            <p>+880  548  986  898  87<br>+880  659  785  658  98</p>
-                            <p>info@eduhome.com<br>www.eduhome.com</p>
+                            <p> @settings.GetValueOrDefault("FooterVenue")</p>
+                            <p> @settings.GetValueOrDefault("FooterNumber1")<br> @settings.GetValueOrDefault("FooterNumber2")</p>
+                            <p> @settings.GetValueOrDefault("Mail1")<br> @settings.GetValueOrDefault("Site")</p>
                         </div>
                     </div>
                 </div>

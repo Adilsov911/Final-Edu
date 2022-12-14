@@ -1,5 +1,11 @@
 ﻿@using NewEduFinal.ViewModels
 @using NewEduFinal.Models
+@using NewEduFinal.Interfaces
+@using NewEduFinal.Services
+@inject ILayoutServices layoutServices
+@{
+    Dictionary<string, string> settings = layoutServices.GetSetting();
+}
 @model HomeVM
 @{
     Layout = null;
@@ -44,7 +50,7 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-3 col-xs-6">
                         <div class="logo">
-                            <a href="~/index.html"><img src="~/img/logo/logo.png" alt="eduhome" /></a>
+                            <a href="~/index.html"><img src="~/@settings.GetValueOrDefault("Logo")" alt="eduhome" /></a>
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-12">
@@ -117,7 +123,7 @@
             <!-- Start Slingle Slide -->
             @foreach (Slider sliders in Model.Sliders)
             {
-                if (sliders.IsDeleted==false)
+                if (sliders.IsDeleted == false)
                 {
 
                     <div class="single-slide item" style="background-image: url(@sliders.Image)">
@@ -143,7 +149,7 @@
                 }
 
             }
-            
+
         </div>
     </section>
     <!-- Background Area End -->
@@ -164,7 +170,7 @@
                                 </div>
                             }
                         }
-                        
+
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -218,7 +224,7 @@
 
                 @foreach (Course item in Model.Courses)
                 {
-                    
+
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="single-course">
                             <div class="course-img">
@@ -235,8 +241,8 @@
                                 <a class="default-btn" href="~/course-details.html">read more</a>
                             </div>
                         </div>
-                    </div> 
-	             }
+                    </div>
+                }
             </div>
         </div>
     </div>
@@ -255,32 +261,32 @@
             <div class="row">
                 @foreach (Event item in Model.Events.Take(8))
                 {
-                    
-                        <div class="col-md-6 col-sm-12 col-xs-12">
-                            <div class="single-event mb-35">
-                                <div class="event-date">
-                                    <h3><a href="~/event-details.html">@item.Date.ToString("dd") <span>@item.Date.ToString("MMMM")</span></a></h3>
+
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="single-event mb-35">
+                            <div class="event-date">
+                                <h3><a href="~/event-details.html">@item.Date.ToString("dd") <span>@item.Date.ToString("MMMM")</span></a></h3>
+                            </div>
+                            <div class="event-content text-left">
+                                <div class="event-content-left">
+                                    <h4><a href="~/event-details.html">@item.Title</a></h4>
+                                    <ul>
+                                        <li><i class="fa fa-clock-o"></i>@item.StartTime - @item.FinishTime</li>
+                                        <li><i class="fa fa-map-marker"></i>@item.Venue</li>
+                                    </ul>
                                 </div>
-                                <div class="event-content text-left">
-                                    <div class="event-content-left">
-                                        <h4><a href="~/event-details.html">@item.Title</a></h4>
-                                        <ul>
-                                            <li><i class="fa fa-clock-o"></i>@item.StartTime - @item.FinishTime</li>
-                                            <li><i class="fa fa-map-marker"></i>@item.Venue</li>
-                                        </ul>
-                                    </div>
-                                    <div class="event-content-right">
-                                        <a class="default-btn" href="~/event-details.html">join now</a>
-                                    </div>
+                                <div class="event-content-right">
+                                    <a class="default-btn" href="~/event-details.html">join now</a>
                                 </div>
                             </div>
-                           
-                        </div>  
-                 }
-                    
-                    
-                
-                
+                        </div>
+
+                    </div>
+                }
+
+
+
+
             </div>
         </div>
     </div>
@@ -343,7 +349,7 @@
                         </div>
                     </div>
                 }
-               
+
 
             </div>
         </div>
@@ -428,9 +434,9 @@
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="single-widget">
                             <h3>get in touch</h3>
-                            <p>Your address goes here, Street<br>City, Roadno 785 New York</p>
-                            <p>+880  548  986  898  87<br>+880  659  785  658  98</p>
-                            <p>info@eduhome.com<br>www.eduhome.com</p>
+                            <p> @settings.GetValueOrDefault("FooterVenue")</p>
+                            <p> @settings.GetValueOrDefault("FooterNumber1")<br> @settings.GetValueOrDefault("FooterNumber2")</p>
+                            <p> @settings.GetValueOrDefault("Mail1")<br> @settings.GetValueOrDefault("Site")</p>
                         </div>
                     </div>
                 </div>

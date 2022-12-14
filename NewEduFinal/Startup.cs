@@ -2,10 +2,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NewEduFinal.DAL;
+using NewEduFinal.Interfaces;
 using NewEduFinal.Services;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,17 +18,29 @@ namespace NewEduFinal
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddControllersWithViews().AddNewtonsoftJson(options =>
+            options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
             services.AddControllersWithViews();
-            services.AddScoped<LayoutService>();
-            services.AddDbContext<AppDbContext>(options =>
-            {
-                options.UseSqlServer("Server=LAPTOP-0KTU4DK9\\SQLEXPRESS;Database=EducationDb;Trusted_Connection=true");
-            });
+            services.AddScoped<ILayoutServices, LayoutService>();
+             services.AddDbContext<AppDbContext>(options =>
+             {
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+             });
+            //services.AddDbContext<AppDbContext>(options =>
+            //{
+            //    options.UseSqlServer("Server=LAPTOP-0KTU4DK9\\SQLEXPRESS;Database=EducationDb;Trusted_Connection=true");
+            //});
+            services.AddHttpContextAccessor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,6 +57,13 @@ namespace NewEduFinal
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+
+                    name: "areas",
+                    pattern: "{area:exists}/{controller=DashBoard}/{action=Index}/{id?}"
+
+                    );
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}"
