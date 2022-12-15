@@ -326,4 +326,5 @@ C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debu
 C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\_ViewImports.cshtml.g.cs
 C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\_ViewStart.cshtml.g.cs
 C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\DashBoard\Index.cshtml.g.cs
-C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Blog\Index.cshtml.g.cs
+C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Category\Index.cshtml.g.cs
+C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Category\Create.cshtml.g.cs
