@@ -31,9 +31,9 @@
                         <td>@counter</td>
                         <td>@category.Name</td>
                         <td>
-                            <a class="btn btn-warning">Update</a>
-                            <a class="btn btn-danger">Delete</a>
-                            <a class="btn btn-primary">Detail</a>
+                            <a class="btn btn-warning" asp-area="manage" asp-controller="category" asp-action="update" asp-route-id="@category.Id">Update</a>
+                            <a class="btn btn-danger"  asp-area="manage" asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>
+                            <a class="btn btn-primary" asp-area="manage" asp-controller="category" asp-action="detail" asp-route-id="@category.Id">Detail</a>
                         </td>
                     </tr>
                     counter++;

@@ -23,5 +23,6 @@ namespace NewEduFinal.Models
         public int StudentCount { get; set; }
         public int CoursesId { get; set; }
         public Course Courses { get; set; }
+        
     }
 }

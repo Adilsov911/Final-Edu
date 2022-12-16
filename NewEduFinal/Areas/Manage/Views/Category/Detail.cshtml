@@ -1,0 +1,62 @@
+﻿
+@model Category
+@{
+    ViewData["Title"] = "Detail";
+    int counter = 1;
+}
+
+
+
+<div class="row justify-content-between">
+    <div class="col-lg-2">
+        <h1 class="h3 mb-4 text-gray-800">@Model.Name Category Page</h1>
+    </div>
+    <div class="col-lg-1">
+        <a asp-area="manage" asp-controller="category" asp-action="index" class="btn btn-primary">Go Home</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            
+            <div class="card-body">
+                <h5 class="card-title">@Model.Name</h5>
+                <p class="card-text">Courses Count: @Model.courses.Count()</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Courses Count</th>
+                    <th>Created at</th>
+                    <th>Setting</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Course course in Model.courses)
+                {
+                    <tr>
+                        <td>@counter</td>
+                        <td><img class="card-img-top " style="width:200px;" src="~/@course.Image" alt="Card image cap"></td>
+                        <td>@course.Name</td>
+                        <td>@course.Name.Count()</td>
+                        <td>@course.CreatedAt?.ToString("dd / MM / yyyy")</td>
+                        <td>
+                            <a class="btn btn-warning" asp-area="manage" asp-controller="category" asp-action="update" asp-route-id="@course.Id">Update</a>
+                            <a class="btn btn-danger" asp-area="manage" asp-controller="category" asp-action="delete" asp-route-id="@course.Id">Delete</a>
+                        </td>
+                    </tr>
+                    counter++;
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

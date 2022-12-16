@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -23,5 +24,7 @@ namespace NewEduFinal.Models
         public List<CourseTag> CourseTags { get; set; }
         [NotMapped]
         public List<int> TagIds { get; set; }
+        [NotMapped]
+        public IFormFile CourseImgFile { get; set; }
     }
 }

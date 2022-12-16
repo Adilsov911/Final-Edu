@@ -1,0 +1,68 @@
+﻿
+
+@model Teacher
+@{ ViewData["Title"] = "Create";
+   
+     List<Hobbie> hobbies = (List<Hobbie>)ViewBag.Hobbies;
+    List<Position> positions = (List<Position>)ViewBag.Positions;
+   
+    }
+
+<h1>Create Brand</h1>
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="@Model.Image">Image</label>
+                <input asp-for="@Model.Image" multiple accept="image/png" class="form-control">
+                <span asp-validation-for="@Model.Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Name">Name</label>
+                <input type="text" asp-for="@Model.Name" class="form-control" id="Name" placeholder="Name" rows="3">
+                <span asp-validation-for="@Model.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.SurName">Surname</label>
+                <input type="text" asp-for="@Model.SurName" class="form-control" id="Surname" placeholder="Surname" rows="3">
+                <span asp-validation-for="@Model.SurName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.AboutMe">About me</label>
+                <textarea asp-for="@Model.AboutMe" class="form-control" id="Aboutme" rows="3"></textarea>
+                <span asp-validation-for="@Model.AboutMe" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="@Model.Degree">Degree</label>
+                <input asp-for="@Model.Degree" class="form-control col-md-2" id="Degree" rows="3">
+                <span asp-validation-for="@Model.Degree" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.PhoneNumber">Phone Number</label>
+                <input type="tel" asp-for="@Model.PhoneNumber" class="form-control col-md-2" id="PhoneNumber" rows="3">
+                <span asp-validation-for="@Model.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Mail">Mail</label>
+                <input type="email" asp-for="@Model.Mail" class="form-control col-md-2" id="Mail" rows="3">
+                <span asp-validation-for="@Model.Mail" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="@Model.PositionIds">Positions</label>
+                <select class="form-control" asp-for="@Model.PositionIds" asp-items="@(new SelectList(positions,"Id","Name"))">
+                </select>
+            </div>
+           
+
+            <div class="form-group col-md-3">
+                <label asp-for="@Model.HobbiesIds">Hobbies</label>
+                <select class="form-control" asp-for="@Model.HobbiesIds" asp-items="@(new SelectList(hobbies,"Id","Name"))">
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+</div>
+

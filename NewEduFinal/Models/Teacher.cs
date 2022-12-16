@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -29,6 +30,8 @@ namespace NewEduFinal.Models
         [NotMapped]
         public List<int> HobbiesIds { get; set; }
         public List<TeacherHobbies> TeacherHobbies { get; set; }
+        [NotMapped]
+        public IFormFile TeacherImgFile { get; set; }
 
 
 

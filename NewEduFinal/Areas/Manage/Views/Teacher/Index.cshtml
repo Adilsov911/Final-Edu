@@ -1,0 +1,48 @@
+﻿
+@model List<Teacher>
+@{ 
+    int counter = 1;
+}
+
+<div class="row justify-content-between">
+    <div class="col-lg-2">
+        <h1 class="h3 mb-4 text-gray-800">Category Page</h1>
+    </div>
+    <div class="col-lg-1">
+        <a asp-area="manage" asp-controller="teacher" asp-action="create" class="btn btn-primary">Create</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Image</th>
+                    <th>Name Surname</th>
+                    <th>Degree</th>
+                    <th>Setting</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Teacher teacher in Model)
+                {
+                <tr>
+                    <td>@counter</td>
+                    <td><img class="card-img-top " style="width:100px;" src="~/@teacher.Image" alt="Card image cap"></td>
+                    <td>@teacher.Name @teacher.SurName</td>
+                    <td>@teacher.Degree</td>
+
+                    <td>
+                        <a class="btn btn-warning" asp-area="manage" asp-controller="teacher" asp-action="update" asp-route-id="@teacher.Id">Update</a>
+                        <a class="btn btn-danger" asp-area="manage" asp-controller="teacher" asp-action="delete" asp-route-id="@teacher.Id">Delete</a>
+                        <a class="btn btn-primary" asp-area="manage" asp-controller="teacher" asp-action="detail" asp-route-id="@teacher.Id">Detail</a>
+                    </td>
+                </tr>
+                    counter++;
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
