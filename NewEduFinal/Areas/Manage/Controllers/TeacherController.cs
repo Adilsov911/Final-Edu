@@ -41,19 +41,6 @@ namespace NewEduFinal.Areas.Manage.Controllers
         {
             ViewBag.Hobbies = _context.Hobbies.ToList();
             ViewBag.Positions = _context.Positions.ToList();
-
-
-            //if (!_context.socialmedias.any(x => x.id == teacher.socialids))
-            //{
-            //    modelstate.addmodelerror("categoryid", "xetaniz var!");
-            //    return view();
-            //}
-            //if (!_context.CourseTags.All(ct => ct.Id==Tag))
-            //{
-            //    ModelState.AddModelError("CategoryId", "Xetaniz var!");
-            //    return View();
-            //}
-
             if (!ModelState.IsValid)
             {
                 return View();
