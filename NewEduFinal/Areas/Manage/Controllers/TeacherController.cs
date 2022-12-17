@@ -29,12 +29,16 @@ namespace NewEduFinal.Areas.Manage.Controllers
 
             return View(teachers);
         }
+
+
         public IActionResult Create()
         {
             ViewBag.Hobbies = _context.Hobbies.ToList();
             ViewBag.Positions = _context.Positions.ToList();
             return View();
         }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Teacher teacher)
@@ -99,5 +103,160 @@ namespace NewEduFinal.Areas.Manage.Controllers
             return RedirectToAction(nameof(Index));
 
         }
+
+        public IActionResult Update(int id)
+        {
+            ViewBag.Hobbies = _context.Hobbies.ToList();
+            ViewBag.Positions = _context.Positions.ToList();
+            Teacher teacher = _context.Teachers.Include(t => t.TeacherHobbies).ThenInclude(th => th.Hobbies).Include(t => t.TeacherPositions).ThenInclude(tp => tp.Position).FirstOrDefault(x => x.Id == id);
+            if (teacher == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(teacher);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Update(int id, Teacher teacher)
+        {
+            ViewBag.Hobbies = _context.Hobbies.ToList();
+            ViewBag.Positions = _context.Positions.ToList();
+
+            Teacher existTeacher = _context.Teachers.Include(t => t.TeacherHobbies).ThenInclude(th => th.Hobbies).Include(t => t.TeacherPositions).ThenInclude(tp => tp.Position).FirstOrDefault(x => x.Id == id);
+            
+            if (existTeacher == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            if (teacher.TeacherImgFile != null)
+            {
+                if (!teacher.TeacherImgFile.IsImage())
+                {
+                    ModelState.AddModelError("ImageFile", "Choose correct format file");
+                    return View();
+                }
+                if (!teacher.TeacherImgFile.IsSizeOkay(2))
+                {
+                    ModelState.AddModelError("ImageFile", "File must be max 2mb");
+                    return View();
+                }
+                existTeacher.Image = teacher.TeacherImgFile.SaveImg(_env.WebRootPath, "assets/img/teacher");
+
+
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            
+
+            var existHobbies = _context.TeacherHobbies.Where(x => x.TeacherId == id).ToList();
+            if (teacher.HobbiesIds != null)
+            {
+                foreach (var hobbieId in teacher.HobbiesIds)
+                {
+                    var existHobbie = existHobbies.FirstOrDefault(x => x.HobbiesId == hobbieId);
+                    if (existHobbie == null)
+                    {
+                        TeacherHobbies teacherHobbie = new TeacherHobbies
+                        {
+                            TeacherId = id,
+                            HobbiesId = hobbieId,
+                        };
+
+                        _context.TeacherHobbies.Add(teacherHobbie);
+                    }
+                    else
+                    {
+                        existHobbies.Remove(existHobbie);
+                    }
+                }
+
+            }
+            _context.TeacherHobbies.RemoveRange(existHobbies);
+
+            var existPositions = _context.TeacherPositions.Where(x => x.TeacherId == id).ToList();
+            if (teacher.PositionIds != null)
+            {
+                foreach (var positionId in teacher.PositionIds)
+                {
+                    var existPosition = existPositions.FirstOrDefault(x => x.PositionId == positionId);
+                    if (existPosition == null)
+                    {
+                        TeacherPosition teacherPosition = new TeacherPosition
+                        {
+                            TeacherId = id,
+                            PositionId = positionId,
+                        };
+
+                        _context.TeacherPositions.Add(teacherPosition);
+                    }
+                    else
+                    {
+                        existPositions.Remove(existPosition);
+                    }
+                }
+
+            }
+
+            _context.TeacherPositions.RemoveRange(existPositions);
+            existTeacher.Image = teacher.Image;
+            existTeacher.Name = teacher.Name.Trim();
+            existTeacher.AboutMe = teacher.AboutMe;
+            existTeacher.Degree = teacher.Degree;
+            existTeacher.SurName = teacher.SurName.Trim();
+            existTeacher.PhoneNumber = teacher.PhoneNumber;
+            existTeacher.Mail = teacher.Mail;
+            existTeacher.UpdatedAt = DateTime.UtcNow.AddHours(4);
+            existTeacher.UpdatedBy = "System";
+
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+
+
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+
+                Teacher teacher = _context.Teachers.Include(t => t.TeacherHobbies).ThenInclude(th => th.Hobbies).Include(t => t.TeacherPositions).ThenInclude(tp => tp.Position).FirstOrDefault(hs => hs.Id == id);
+                Teacher existTeacher = _context.Teachers.Include(t => t.TeacherHobbies).ThenInclude(th => th.Hobbies).Include(t => t.TeacherPositions).ThenInclude(tp => tp.Position).FirstOrDefault(s => s.Id == teacher.Id);
+
+                if (existTeacher == null) return NotFound("id yanlisdir");
+                if (teacher == null) return RedirectToAction("Index");
+                _context.Teachers.Remove(teacher);
+                _context.SaveChanges();
+
+                return RedirectToAction("Index");
+
+        }
+        [HttpGet]
+        public async Task<IActionResult> Detail(int? id)
+        {
+            if (id == null)
+            {
+                return BadRequest("id null ola bilmez");
+            }
+
+            Teacher teacher = _context.Teachers
+                .Include(c => c.TeacherHobbies)
+                .ThenInclude(c => c.Hobbies)
+                .Include(c=>c.TeacherPositions)
+                .ThenInclude(c=>c.Position)
+                .FirstOrDefault(c => c.IsDeleted == false &&  c.Id == id);
+
+            if (teacher == null)
+            {
+                return NotFound("id yalnisdir");
+            }
+
+            return View(teacher);
+        }
+
     }
 }

@@ -334,3 +334,5 @@ C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debu
 C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Course\Create.cshtml.g.cs
 C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Teacher\Index.cshtml.g.cs
 C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Teacher\Create.cshtml.g.cs
+C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Teacher\Update.cshtml.g.cs
+C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Teacher\Detail.cshtml.g.cs
