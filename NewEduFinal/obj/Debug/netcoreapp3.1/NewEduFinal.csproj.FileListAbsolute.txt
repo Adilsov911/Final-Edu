@@ -312,7 +312,6 @@ C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debu
 C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\NewEduFinal.dll
 C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\NewEduFinal.pdb
 C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\NewEduFinal.genruntimeconfig.cache
-C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_TeacherPartialView.cshtml.g.cs
 C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Views\Course\Detail.cshtml.g.cs
 C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
@@ -336,3 +335,6 @@ C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debu
 C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Teacher\Create.cshtml.g.cs
 C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Teacher\Update.cshtml.g.cs
 C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Teacher\Detail.cshtml.g.cs
+C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Slider\Index.cshtml.g.cs
+C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Slider\Create.cshtml.g.cs
+C:\Users\adils\OneDrive\Рабочий стол\NewEduFinal\NewEduFinal\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_SearchPartialView.cshtml.g.cs

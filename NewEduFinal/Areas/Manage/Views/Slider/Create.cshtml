@@ -1,0 +1,26 @@
+﻿
+@model Slider
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Slider</h1>
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="@Model.Image">Image</label>
+                <input type="file" asp-for="@Model.Image" multiple accept="image/png" accept="image/jpeg" class="form-control">
+                <span asp-validation-for="@Model.Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Title">Name</label>
+                <input type="text" asp-for="@Model.Title" class="form-control" id="Name" placeholder="Name" rows="3">
+                <span asp-validation-for="@Model.Title" class="text-danger"></span>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+</div>

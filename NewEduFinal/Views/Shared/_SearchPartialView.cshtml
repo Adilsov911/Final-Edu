@@ -1,0 +1,14 @@
+﻿
+@using NewEduFinal.ViewModels;
+@model List<CourseListVM>
+
+
+
+@foreach (CourseListVM course in Model)
+{
+    <li style="align-items:center">
+        <img style="width: 35%" src="~/img/course/@course.Image" alt="Alternate Text" />
+        <span asp-controller="course" asp-action="detail" asp-route-id="@course.Id">@course.Title</span>
+    </li>
+
+}

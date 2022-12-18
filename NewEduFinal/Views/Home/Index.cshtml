@@ -50,7 +50,7 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-3 col-xs-6">
                         <div class="logo">
-                            <a href="~/index.html"><img src="~/@settings.GetValueOrDefault("Logo")" alt="eduhome" /></a>
+                            <a href="~/index.html"><img src="@settings.GetValueOrDefault("Logo")" alt="eduhome" /></a>
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-12">
@@ -126,7 +126,7 @@
                 if (sliders.IsDeleted == false)
                 {
 
-                    <div class="single-slide item" style="background-image: url(@sliders.Image)">
+                    <div class="single-slide item" style="background-image: url(img/slider/@sliders.Image)">
                         <!-- Start Slider Content -->
                         <div class="slider-content-area">
                             <div class="container">
