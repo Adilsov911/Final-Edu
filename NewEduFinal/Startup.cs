@@ -1,12 +1,14 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NewEduFinal.DAL;
 using NewEduFinal.Interfaces;
+using NewEduFinal.Models;
 using NewEduFinal.Services;
 using Newtonsoft.Json;
 using System;
@@ -36,11 +38,21 @@ namespace NewEduFinal
              {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
              });
-            //services.AddDbContext<AppDbContext>(options =>
-            //{
-            //    options.UseSqlServer("Server=LAPTOP-0KTU4DK9\\SQLEXPRESS;Database=EducationDb;Trusted_Connection=true");
-            //});
+            
             services.AddHttpContextAccessor();
+            services.AddIdentity<AppUser, IdentityRole>(option =>
+            {
+
+
+                option.Password.RequireDigit = true;
+                option.Password.RequiredLength = 8;
+                option.Password.RequireLowercase = true;
+                option.Password.RequireUppercase = true;
+                option.Lockout.MaxFailedAccessAttempts = 5;
+                option.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromSeconds(90);
+                option.Lockout.AllowedForNewUsers = true;
+                option.User.RequireUniqueEmail = true;
+            }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
